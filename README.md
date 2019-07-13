@@ -1,11 +1,4 @@
-# Sensors [![Build Status](https://travis-ci.org/curso-java-spring/spring-petclinic.svg?branch=master)](https://travis-ci.org/curso-java-spring/spring-petclinic)
-Deploy this sample application to Pivotal Web Services:
-<a href="https://push-to.cfapps.io?repo=https%3A%2F%2Fgithub.com%2Fspring-projects%2Fspring-petclinic.git">
-    <img src="https://push-to.cfapps.io/ui/assets/images/Push-to-Pivotal-Dark.svg" width="130" alt="Push" align="top">
-</a>
-
-## Understanding the Spring Petclinic application with a few diagrams
-<a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
+# Teju 
 
 ## Recording a reading using Postman
 
@@ -13,17 +6,17 @@ Send a POST to localhost:8080/readings.
 Body raw is {"humidity": 12}.
 Authorization is scott:tiger.
 
-## Running petclinic locally
-Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
+## Running locally
+Teju is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
 
 ```
-git clone https://github.com/spring-projects/spring-petclinic.git
+git clone https://github.com/masmangan/crispy-sniffle.git
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
 ```
 
-You can then access petclinic here: http://localhost:8080/
+You can then access teju here: http://localhost:8080/
 
 <img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
 

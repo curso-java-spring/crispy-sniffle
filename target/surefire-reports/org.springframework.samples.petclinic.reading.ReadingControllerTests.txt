@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.springframework.samples.petclinic.reading.ReadingControllerTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 27.229 s <<< FAILURE! - in org.springframework.samples.petclinic.reading.ReadingControllerTests
+testAddReading(org.springframework.samples.petclinic.reading.ReadingControllerTests)  Time elapsed: 0.918 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<405>
+	at org.springframework.samples.petclinic.reading.ReadingControllerTests.testAddReading(ReadingControllerTests.java:67)
+

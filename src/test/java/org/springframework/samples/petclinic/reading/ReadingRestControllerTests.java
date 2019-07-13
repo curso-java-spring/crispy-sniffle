@@ -21,15 +21,17 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,21 +39,35 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Test class for {@link ReadingController}
  *
  */
-@RunWith(SpringRunner.class)
-@WebMvcTest(ReadingController.class)
+@SpringBootTest
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
 @WithMockUser(roles = "OWNER_ADMIN")
-public class ReadingControllerTests {
+public class ReadingRestControllerTests {
+
 
 	@Autowired
+	private ReadingRestController readingRestController;
+	
 	private MockMvc mockMvc;
 
-	@MockBean
-	private ReadingRepository readingController;
-
-	@Test
-	public void testProcessFindAllReadings() throws Exception {
-		mockMvc.perform(get("/readings")).andExpect(status().isOk()).andExpect(view().name("readings/readingsList"));
-
+	@Before
+	public void initOwners() {
+		this.mockMvc = MockMvcBuilders.standaloneSetup(readingRestController).build();
+				//.setControllerAdvice(new ExceptionControllerAdvice()).build();
 	}
 
+	@Test
+	public void testAddReading() throws Exception {
+		Reading read = new Reading();
+		// read.setId(301);
+		read.setHumidity(101);
+
+		ObjectMapper mapper = new ObjectMapper();
+		String newOwnerAsJSON = mapper.writeValueAsString(read);
+
+		mockMvc.perform(post("/readings").content(newOwnerAsJSON).accept(MediaType.APPLICATION_JSON_VALUE)
+				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(status().isCreated());
+
+	}
 }

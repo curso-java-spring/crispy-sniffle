@@ -17,6 +17,8 @@ package org.springframework.samples.petclinic.reading;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
+
 import org.springframework.data.repository.Repository;
 
 /**
@@ -24,6 +26,8 @@ import org.springframework.data.repository.Repository;
 public interface ReadingRepository extends Repository<Reading, Integer> {
 
    Collection<Reading> findAll();
+
+void save(@Valid Reading reading);
 
 
 }

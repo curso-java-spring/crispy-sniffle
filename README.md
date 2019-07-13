@@ -7,9 +7,14 @@ Deploy this sample application to Pivotal Web Services:
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
 
+## Recording a reading using Postman
+
+Send a POST to localhost:8080/readings.
+Body raw is {"humidity": 12}.
+Authorization is scott:tiger.
+
 ## Running petclinic locally
 Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
-
 
 ```
 git clone https://github.com/spring-projects/spring-petclinic.git

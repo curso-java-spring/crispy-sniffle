@@ -34,19 +34,19 @@ import org.springframework.test.web.servlet.MockMvc;
  *
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(ReadingController.class)
+@WebMvcTest(SensorController.class)
 @WithMockUser(roles = "OWNER_ADMIN")
-public class ReadingControllerTests {
+public class SensorControllerTests {
 
 	@Autowired
 	private MockMvc mockMvc;
 
 	@MockBean
-	private ReadingRepository readingController;
+	private SensorRepository sensorController;
 
 	@Test
 	public void testProcessFindAllReadings() throws Exception {
-		mockMvc.perform(get("/readings")).andExpect(status().isOk()).andExpect(view().name("readings/readingsList"));
+		mockMvc.perform(get("/sensors")).andExpect(status().isOk()).andExpect(view().name("sensors/sensorsList"));
 
 	}
 

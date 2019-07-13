@@ -6,7 +6,9 @@ DROP TABLE pets IF EXISTS;
 DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 DROP TABLE products IF EXISTS;
-
+DROP TABLE readings IF EXISTS;
+DROP TABLE sensors IF EXISTS;
+DROP TABLE crops IF EXISTS;
 
 CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
@@ -73,13 +75,22 @@ CREATE INDEX products_name ON products (name);
 
 CREATE TABLE readings (
   id   INTEGER IDENTITY PRIMARY KEY,
-  humidity INTEGER  
+  sensor INTEGER,
+  humidity INTEGER ,
+    creation_date TIMESTAMP
+   
 );
 
+CREATE TABLE sensors (
+  id   INTEGER IDENTITY PRIMARY KEY,
+    name VARCHAR(80)
+  
+);
 
-
-
-
+CREATE TABLE crops (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  name VARCHAR(80)
+);
 
 
 

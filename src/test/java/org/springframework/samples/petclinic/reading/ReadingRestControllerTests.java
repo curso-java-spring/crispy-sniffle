@@ -16,10 +16,8 @@
 
 package org.springframework.samples.petclinic.reading;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +27,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -41,27 +38,25 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
 @WithMockUser(roles = "OWNER_ADMIN")
 public class ReadingRestControllerTests {
 
-
 	@Autowired
 	private ReadingRestController readingRestController;
-	
+
 	private MockMvc mockMvc;
 
 	@Before
 	public void initOwners() {
 		this.mockMvc = MockMvcBuilders.standaloneSetup(readingRestController).build();
-				//.setControllerAdvice(new ExceptionControllerAdvice()).build();
 	}
 
 	@Test
 	public void testAddReading() throws Exception {
 		Reading read = new Reading();
-		// read.setId(301);
-		read.setHumidity(101);
+		read.setHumidity(200);
+		read.setCreationDateTime(null);
+		// FIXME avoiding date serialization
 
 		ObjectMapper mapper = new ObjectMapper();
 		String newOwnerAsJSON = mapper.writeValueAsString(read);

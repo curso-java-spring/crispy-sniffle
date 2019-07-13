@@ -36,7 +36,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
 @RequestMapping("/readings")
-
 class ReadingRestController {
 
 	@Autowired

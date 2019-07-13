@@ -1,4 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: org.springframework.samples.petclinic.owner.VisitControllerTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.448 s - in org.springframework.samples.petclinic.owner.VisitControllerTests
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 1.659 s <<< FAILURE! - in org.springframework.samples.petclinic.owner.VisitControllerTests
+testProcessNewVisitFormHasErrors(org.springframework.samples.petclinic.owner.VisitControllerTests)  Time elapsed: 0.136 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "!#fields.hasErrors(name)" (template: "fragments/inputField" - line 5, col 12)
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testProcessNewVisitFormHasErrors(VisitControllerTests.java:86)
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "!#fields.hasErrors(name)" (template: "fragments/inputField" - line 5, col 12)
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testProcessNewVisitFormHasErrors(VisitControllerTests.java:86)
+Caused by: org.springframework.core.convert.ConversionFailedException: Failed to convert from type [@javax.persistence.Column @org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] to type [java.lang.String] for value '2019-07-13'; nested exception is java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testProcessNewVisitFormHasErrors(VisitControllerTests.java:86)
+Caused by: java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testProcessNewVisitFormHasErrors(VisitControllerTests.java:86)
+
+testInitNewVisitForm(org.springframework.samples.petclinic.owner.VisitControllerTests)  Time elapsed: 0.067 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "!#fields.hasErrors(name)" (template: "fragments/inputField" - line 5, col 12)
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testInitNewVisitForm(VisitControllerTests.java:69)
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "!#fields.hasErrors(name)" (template: "fragments/inputField" - line 5, col 12)
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testInitNewVisitForm(VisitControllerTests.java:69)
+Caused by: org.springframework.core.convert.ConversionFailedException: Failed to convert from type [@javax.persistence.Column @org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] to type [java.lang.String] for value '2019-07-13'; nested exception is java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testInitNewVisitForm(VisitControllerTests.java:69)
+Caused by: java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: HourOfDay
+	at org.springframework.samples.petclinic.owner.VisitControllerTests.testInitNewVisitForm(VisitControllerTests.java:69)
+

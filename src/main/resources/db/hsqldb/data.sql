@@ -63,19 +63,14 @@ INSERT INTO products VALUES (3,
 'WHISKAS® Sachê Adulto Sabor Atum ao Molho WHISKAS® sabe o que os gatos naturalmente precisam e amam. Por isso, cada sachê é preparado cuidadosamente com ingredientes de alta qualidade, garantindo os nutrientes que eles precisam todos os dias, e agora com um molho ainda mais encorpado. Disponível em embalagens de 85g, prática, fácil de abrir e que contém a medida certa para uma refeição saudável, completa e balanceada.');
 
 
-INSERT INTO readings VALUES (1, 20);
-INSERT INTO readings VALUES (2, 50);
+INSERT INTO readings(sensor, humidity) VALUES ( 1, 20);
+INSERT INTO readings(sensor, humidity) VALUES ( 2, 50);
 
+INSERT INTO sensors(id, name)  VALUES ( 1, 'Morangos sul');
+INSERT INTO sensors(id, name) VALUES ( 2, 'Morangos norte');
 
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO crops VALUES (1, 'morangos');
+INSERT INTO crops VALUES (2, 'cactus');
+INSERT INTO crops VALUES (3, 'cogumelos');
+INSERT INTO crops VALUES (4, 'violeta'); 
+INSERT INTO crops VALUES (5, 'lavanda');

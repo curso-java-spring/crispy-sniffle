@@ -25,9 +25,8 @@ import org.springframework.data.repository.Repository;
  */
 public interface ReadingRepository extends Repository<Reading, Integer> {
 
-   Collection<Reading> findAll();
+	Collection<Reading> findAll();
 
-void save(@Valid Reading reading);
-
+	void save(@Valid Reading reading);
 
 }

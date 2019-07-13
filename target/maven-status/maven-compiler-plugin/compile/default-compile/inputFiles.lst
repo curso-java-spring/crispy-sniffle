@@ -4,6 +4,7 @@
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/ReadingRestController.java
+/Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/SensorController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/ReadingController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/model/Person.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
@@ -17,6 +18,7 @@
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/visit/Visit.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/Owner.java
+/Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/Sensor.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/vet/Specialty.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/vet/VetController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java
@@ -29,6 +31,7 @@
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/visit/VisitRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/system/CrashController.java
+/Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/SensorRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/Reading.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java

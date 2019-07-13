@@ -71,7 +71,10 @@ CREATE TABLE products (
 );
 CREATE INDEX products_name ON products (name);
 
-
+CREATE TABLE readings (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  humidity INTEGER  
+);
 
 
 

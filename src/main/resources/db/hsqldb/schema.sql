@@ -83,13 +83,16 @@ CREATE TABLE readings (
 
 CREATE TABLE sensors (
   id   INTEGER IDENTITY PRIMARY KEY,
-    name VARCHAR(80)
+    name VARCHAR(80),
+    crop_id INTEGER NOT NULL
   
 );
 
 CREATE TABLE crops (
   id   INTEGER IDENTITY PRIMARY KEY,
-  name VARCHAR(80)
+  name VARCHAR(80),
+  lower INTEGER,
+  upper INTEGER
 );
 
 

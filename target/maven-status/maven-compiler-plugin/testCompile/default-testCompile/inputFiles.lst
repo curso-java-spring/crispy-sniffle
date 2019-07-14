@@ -1,5 +1,6 @@
 /Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
 /Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java
+/Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/reading/CropFormatterTests.java
 /Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
 /Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/reading/SensorControllerTests.java
 /Users/marco/crispy-sniffle/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java

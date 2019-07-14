@@ -40,8 +40,8 @@ public class Reading extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int sensor;
 	private int humidity;
+	
 	@Column(name = "creation_date")
-
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime creationDateTime;
 
@@ -75,11 +75,12 @@ public class Reading extends BaseEntity implements Serializable {
 	}
 
 	public String getFormattedCreationDateTime() {
-		if (creationDateTime == null) return "-";
+		if (creationDateTime == null)
+			return "-";
 		String formattedDate = creationDateTime.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
 		return formattedDate;
 	}
-	
+
 	@Override
 	public String toString() {
 		return String.format("Reading [humidity=%s, getId()=%s, isNew()=%s]", humidity, getId(), isNew());

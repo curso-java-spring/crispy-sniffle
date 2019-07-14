@@ -13,23 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.springframework.samples.petclinic.reading;
 
-package org.springframework.samples.petclinic;
+import java.io.Serializable;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.springframework.samples.petclinic.model.NamedEntity;
 
 /**
- * PetClinic Spring Boot Application.
- *
- * @author Dave Syer
- *
  */
-@SpringBootApplication
-public class PetClinicApplication {
+@Entity
+@Table(name = "crops")
+public class Crop extends NamedEntity implements Serializable {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PetClinicApplication.class, args);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int lower;
+	private int upper;
+
+	public int getLower() {
+		return lower;
 	}
+
+	public void setLower(int lower) {
+		this.lower = lower;
+	}
+
+	public int getUpper() {
+		return upper;
+	}
+
+	public void setUpper(int upper) {
+		this.upper = upper;
+	}
+
 
 }

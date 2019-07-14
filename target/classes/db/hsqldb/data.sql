@@ -66,11 +66,11 @@ INSERT INTO products VALUES (3,
 INSERT INTO readings(sensor, humidity) VALUES ( 1, 20);
 INSERT INTO readings(sensor, humidity) VALUES ( 2, 50);
 
-INSERT INTO sensors(id, name)  VALUES ( 1, 'Morangos sul');
-INSERT INTO sensors(id, name) VALUES ( 2, 'Morangos norte');
+INSERT INTO sensors(id, name, crop_id)  VALUES ( 1, 'Morangos sul',1);
+INSERT INTO sensors(id, name, crop_id) VALUES ( 2, 'Morangos norte',1);
 
-INSERT INTO crops VALUES (1, 'morangos');
-INSERT INTO crops VALUES (2, 'cactus');
-INSERT INTO crops VALUES (3, 'cogumelos');
-INSERT INTO crops VALUES (4, 'violeta'); 
-INSERT INTO crops VALUES (5, 'lavanda');
+INSERT INTO crops VALUES (1, 'morangos', 60, 80);
+INSERT INTO crops VALUES (2, 'cactus', 20, 50);
+INSERT INTO crops VALUES (3, 'cogumelos', 80, 90);
+INSERT INTO crops VALUES (4, 'violeta', 40, 80); 
+INSERT INTO crops VALUES (5, 'lavanda', 20, 30);

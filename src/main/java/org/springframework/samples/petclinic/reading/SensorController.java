@@ -21,5 +21,5 @@ public class SensorController {
 		model.addAttribute("sensors", sensors);
 
 		return "sensors/sensorsList";
-	}	
+	}
 }

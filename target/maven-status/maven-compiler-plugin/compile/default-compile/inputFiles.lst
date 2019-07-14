@@ -25,6 +25,7 @@
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/product/ProductController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/system/MvcConfig.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/vet/Vets.java
+/Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/CropFormatter.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/product/ProductRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/system/WebSecurityConfig.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/Pet.java
@@ -32,6 +33,7 @@
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/PetRepository.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/system/CrashController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/SensorRepository.java
+/Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/Crop.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/reading/Reading.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java
 /Users/marco/crispy-sniffle/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java

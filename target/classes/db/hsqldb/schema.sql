@@ -84,6 +84,7 @@ CREATE TABLE readings (
 CREATE TABLE sensors (
   id   INTEGER IDENTITY PRIMARY KEY,
     name VARCHAR(80),
+    normal BOOLEAN,
     crop_id INTEGER NOT NULL
   
 );

@@ -6,7 +6,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.samples.petclinic.model.NamedEntity;
-import org.springframework.samples.petclinic.owner.PetType;
 
 @Entity
 @Table(name = "sensors")
@@ -20,6 +19,7 @@ public class Sensor extends NamedEntity {
     @ManyToOne
     @JoinColumn(name = "crop_id")
     private Crop crop;
+    private boolean normal;
 
 	public Crop getCrop() {
 		return crop;
@@ -29,4 +29,21 @@ public class Sensor extends NamedEntity {
 		this.crop = crop;
 	}	
 	
+	public int getUpper() {
+		return crop.getUpper();
+	}
+	
+	public int getLower() {
+		return crop.getLower();
+	}
+
+	public boolean isNormal() {
+		return normal;
+	}
+
+	public void setNormal(boolean normal) {
+		this.normal = normal;
+	}
+
+
 }

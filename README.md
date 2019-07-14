@@ -3,7 +3,7 @@
 ## Recording a reading using Postman
 
 Send a POST to localhost:8080/readings.
-Body raw is {"humidity": 12}.
+Body raw is {"sensor": 1, "humidity": 12}.
 Authorization is scott:tiger.
 
 ## Running locally

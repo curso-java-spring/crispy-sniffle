@@ -54,6 +54,7 @@ public class ReadingRestControllerTests {
 	@Test
 	public void testAddReading() throws Exception {
 		Reading read = new Reading();
+		read.setSensor(1);
 		read.setHumidity(200);
 		read.setCreationDateTime(null);
 		// FIXME avoiding date serialization

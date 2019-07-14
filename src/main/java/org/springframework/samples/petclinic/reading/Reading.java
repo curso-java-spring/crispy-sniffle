@@ -16,7 +16,6 @@
 package org.springframework.samples.petclinic.reading;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -40,7 +39,7 @@ public class Reading extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int sensor;
 	private int humidity;
-	
+
 	@Column(name = "creation_date")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime creationDateTime;

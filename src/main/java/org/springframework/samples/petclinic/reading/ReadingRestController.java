@@ -15,8 +15,13 @@
  */
 package org.springframework.samples.petclinic.reading;
 
+import java.util.Date;
+
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -38,11 +43,21 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/readings")
 class ReadingRestController {
 
+	private static final Logger log = LoggerFactory.getLogger(ReadingRestController.class);
+
+	
 	@Autowired
 	private ReadingRepository readings;
 
+	@Autowired
+	private SensorRepository sensors;	
+
+	@Autowired
+	private MessageTask messages;
+	
 	@PreAuthorize(value = "true")
 	@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@Transactional
 	public ResponseEntity<Reading> addReading(@RequestBody @Valid Reading reading, BindingResult bindingResult,
 			UriComponentsBuilder ucBuilder) {
 		BindingErrorsResponse errors = new BindingErrorsResponse();
@@ -53,6 +68,20 @@ class ReadingRestController {
 			return new ResponseEntity<Reading>(headers, HttpStatus.BAD_REQUEST);
 		}
 		this.readings.save(reading);
+		// Update sensor state, if changed.
+		Sensor s = sensors.findById(reading.getSensor());
+		log.info("Sensor located {}", s);
+		log.info("Sensor state {}", s.isNormal());
+
+		boolean state = s.isNormal();
+		s.setNormal(s.getUpper() >= reading.getHumidity()
+				&& s.getLower() >= reading.getHumidity());
+		if (state != s.isNormal()) {
+			// Send notification
+			messages.notifySensor(s);
+		}
+		this.sensors.save(s);
+		
 		headers.setLocation(ucBuilder.path("/readings/{id}").buildAndExpand(reading.getId()).toUri());
 		return new ResponseEntity<Reading>(reading, headers, HttpStatus.CREATED);
 	}

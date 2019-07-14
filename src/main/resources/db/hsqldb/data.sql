@@ -66,8 +66,8 @@ INSERT INTO products VALUES (3,
 INSERT INTO readings(sensor, humidity) VALUES ( 1, 20);
 INSERT INTO readings(sensor, humidity) VALUES ( 2, 50);
 
-INSERT INTO sensors(id, name, crop_id)  VALUES ( 1, 'Morangos sul',1);
-INSERT INTO sensors(id, name, crop_id) VALUES ( 2, 'Morangos norte',1);
+INSERT INTO sensors(id, name, normal, crop_id)  VALUES ( 1, 'Morangos sul', true, 1);
+INSERT INTO sensors(id, name, normal, crop_id) VALUES ( 2, 'Morangos norte', true, 1);
 
 INSERT INTO crops VALUES (1, 'morangos', 60, 80);
 INSERT INTO crops VALUES (2, 'cactus', 20, 50);

@@ -1,4 +1,4 @@
-# Teju 
+# Teju [![Build Status](https://travis-ci.org/curso-java-spring/crispy-sniffle.svg?branch=master)](https://travis-ci.org/curso-java-spring/crispy-sniffle)
 
 ## Recording a reading using Postman
 

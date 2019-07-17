@@ -15,8 +15,6 @@
  */
 package org.springframework.samples.petclinic.reading;
 
-import java.util.Date;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 

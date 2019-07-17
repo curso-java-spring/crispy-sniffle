@@ -51,7 +51,7 @@ public class CropFormatterTests {
 
 	@Test
 	public void testPrint() {
-		Crop petType = new Crop();
+		CropType petType = new CropType();
 		petType.setName("Morango");
 		String petTypeName = this.petTypeFormatter.print(petType, Locale.ENGLISH);
 		assertThat(petTypeName).isEqualTo("Morango");
@@ -60,7 +60,7 @@ public class CropFormatterTests {
 	@Test
 	public void shouldParse() throws ParseException {
 		given(this.sensors.findCrops()).willReturn(makePetTypes());
-		Crop petType = petTypeFormatter.parse("Morango", Locale.ENGLISH);
+		CropType petType = petTypeFormatter.parse("Morango", Locale.ENGLISH);
 		assertThat(petType.getName()).isEqualTo("Morango");
 	}
 
@@ -75,9 +75,9 @@ public class CropFormatterTests {
 	 *
 	 * @return {@link Collection} of {@link PetType}
 	 */
-	private List<Crop> makePetTypes() {
-		List<Crop> petTypes = new ArrayList<>();
-		petTypes.add(new Crop() {
+	private List<CropType> makePetTypes() {
+		List<CropType> petTypes = new ArrayList<>();
+		petTypes.add(new CropType() {
 			/**
 			 * 
 			 */
@@ -87,7 +87,7 @@ public class CropFormatterTests {
 				setName("Lavanda");
 			}
 		});
-		petTypes.add(new Crop() {
+		petTypes.add(new CropType() {
 			/**
 			 * 
 			 */

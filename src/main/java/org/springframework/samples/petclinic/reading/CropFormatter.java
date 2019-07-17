@@ -27,7 +27,7 @@ import org.springframework.stereotype.Component;
 
  */
 @Component
-public class CropFormatter implements Formatter<Crop> {
+public class CropFormatter implements Formatter<CropType> {
 
 	private final SensorRepository sensors;
 
@@ -37,14 +37,14 @@ public class CropFormatter implements Formatter<Crop> {
 	}
 
 	@Override
-	public String print(Crop crop, Locale locale) {
+	public String print(CropType crop, Locale locale) {
 		return crop.getName();
 	}
 
 	@Override
-	public Crop parse(String text, Locale locale) throws ParseException {
-		Collection<Crop> findPetTypes = this.sensors.findCrops();
-		for (Crop type : findPetTypes) {
+	public CropType parse(String text, Locale locale) throws ParseException {
+		Collection<CropType> findPetTypes = this.sensors.findCrops();
+		for (CropType type : findPetTypes) {
 			if (type.getName().equals(text)) {
 				return type;
 			}

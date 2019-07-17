@@ -16,9 +16,9 @@ public interface SensorRepository extends Repository<Sensor, Integer> {
 	
 	Collection<Sensor> findAll();
 
-	@Query("SELECT crop FROM Crop crop ORDER BY crop.name")
+	@Query("SELECT cropType FROM CropType cropType ORDER BY cropType.name")
 	@Transactional(readOnly = true)
-	Collection<Crop> findCrops();
+	Collection<CropType> findCrops();
 
 	void save(Sensor s);
 }

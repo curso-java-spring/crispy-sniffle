@@ -18,14 +18,14 @@ public class Sensor extends NamedEntity {
 
     @ManyToOne
     @JoinColumn(name = "crop_id")
-    private Crop crop;
+    private CropType crop;
     private boolean normal;
 
-	public Crop getCrop() {
+	public CropType getCrop() {
 		return crop;
 	}
 
-	public void setCrop(Crop crop) {
+	public void setCrop(CropType crop) {
 		this.crop = crop;
 	}	
 	
